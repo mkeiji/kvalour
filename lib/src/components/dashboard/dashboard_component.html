@@ -1,0 +1,24 @@
+<div class="kv-top-players-title">
+    <h2>Top Rated Players</h2>
+</div>
+
+<div class="kv-top-players row">
+    <div *ngFor="let player of players" class="col-lg-4">
+        <img class="kv-top-player-img mx-auto d-block mb-3"
+             src="{{player.image}}">
+        <h4 class="text-center">{{player.name}} {{player.lastName}}</h4>
+        <p class="text-justify">Donec sed odio dui. Etiam porta sem malesuada
+            magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut
+            id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            Praesent commodo cursus magna.</p>
+        <p>
+            <a class="btn btn-secondary"
+              role="button"
+              [routerLink]="playerUrl(player.id)">View details &raquo;</a>
+        </p>
+    </div>
+</div>
+
+
+
+

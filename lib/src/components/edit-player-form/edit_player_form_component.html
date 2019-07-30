@@ -1,0 +1,74 @@
+<!--TODO: update form to process player-->
+<!--horizontal (inLine == true)-->
+<div>
+    <form (ngSubmit)="onSubmit()" #editPlayerForm="ngForm">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="name"
+                       [(ngModel)]="player.name"
+                       #name="ngForm"
+                       [class.is-invalid]="!name.valid"
+                       ngControl="name"
+                       [disabled]="!isEditMode"></div>
+
+            <div class="form-group col-md-5">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname"
+                       [(ngModel)]="player.lastName"
+                       #lastName="ngForm"
+                       [class.is-invalid]="!lastName.valid"
+                       ngControl="lastName"
+                       [disabled]="!isEditMode"></div>
+
+            <div class="form-group col-md-3">
+                <label for="birthdate2">Birthdate</label>
+                <input type="text" class="form-control" id="birthdate2"
+                       [(ngModel)]="strBirthDate"
+                       #birthDate="ngForm"
+                       [class.is-invalid]="!birthDate.valid"
+                       ngControl="birthDate"
+                       [disabled]="!isEditMode"></div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="number">Shirt Number</label>
+                <input type="number" class="form-control" id="number"
+                       [(ngModel)]="player.number"
+                       #number="ngForm"
+                       [class.is-invalid]="!number.valid"
+                       ngControl="number"
+                       [disabled]="!isEditMode"></div>
+
+            <div class="form-group col-md-5">
+                <label for="position">Position</label>
+                <input type="text" class="form-control" id="position"
+                       [(ngModel)]="player.position"
+                       #position="ngForm"
+                       [class.is-invalid]="!position.valid"
+                       ngControl="position"
+                       [disabled]="!isEditMode"></div>
+
+            <div class="form-group col-md-5">
+                <label for="nationality">Nationality</label>
+                <input type="text" class="form-control" id="nationality"
+                       [(ngModel)]="player.nationality"
+                       #nationality="ngForm"
+                       [class.is-invalid]="!nationality.valid"
+                       ngControl="nationality"
+                       [disabled]="!isEditMode"></div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-info w-25 mt-2"
+                    type="button"
+                    (click)="changeEditMode()"
+                    [hidden]="isEditMode">Edit</button>
+
+            <button class="btn btn-success w-25 mt-2"
+                    type="submit"
+                    [hidden]="!isEditMode">Save</button>
+        </div>
+    </form>
+</div>

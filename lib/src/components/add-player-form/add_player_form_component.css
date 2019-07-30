@@ -1,0 +1,9 @@
+.add-mode-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: flex;
+}

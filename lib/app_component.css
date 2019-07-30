@@ -1,0 +1,12 @@
+:host { }
+
+.valour-logo {
+    margin: 10px 30px;
+    position: absolute;
+    z-index: 1040;
+    width: 126px;
+}
+
+.kv-nav-menu {
+    margin-left: 150px;
+}

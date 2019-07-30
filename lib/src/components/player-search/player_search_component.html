@@ -1,0 +1,14 @@
+<div class="inline mt-2 mt-md-0">
+    <input #searchBox
+           class="form-control mr-sm-2"
+           (change)="search(searchBox.value)"
+           (keyup)="search(searchBox.value)"
+           placeholder="Search player"/>
+    <div>
+        <div id="search-bar"
+             *ngFor="let player of players | async"
+             (click)="gotoDetail(player); searchBox.value='' " class="form-control">
+            {{player.name}}
+        </div>
+    </div>
+</div>

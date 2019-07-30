@@ -1,0 +1,108 @@
+<div class="mt-2 mb-4 add-mode-btn">
+    <button class="btn btn-success w-25"
+            (click)="changeAddMode()">Add Player</button>
+</div>
+
+<div [hidden]="!isAddMode" class="container mt-5 w-25 mb-5">
+    <form (ngSubmit)="onSubmit()" #newPlayerForm="ngForm">
+        <div class="form-group">
+            <label for="number">Number&nbsp;*</label>
+            <input type="number" class="form-control" id="number" required
+                   [(ngModel)]="player.number"
+                   #number="ngForm"
+                   [class.is-invalid]="!number.valid"
+                   ngControl="number"></div>
+
+        <div class="form-group">
+            <label for="birthDate">Birthdate&nbsp;*</label>
+            <input type="date" class="form-control" id="birthDate" required
+                   [(ngModel)]="strBirthDate"
+                   #birthDate="ngForm"
+                   [class.is-invalid]="!birthDate.valid"
+                   ngControl="birthDate"></div>
+
+        <div class="form-group">
+            <label for="name">Name&nbsp;*</label>
+            <input type="text" class="form-control" id="name" required
+                   [(ngModel)]="player.name"
+                   #name="ngForm"
+                   [class.is-valid]="name.valid"
+                   [class.is-invalid]="!name.valid"
+                   ngControl="name">
+            <div [hidden]="name.valid || name.pristine"
+                 class="invalid-feedback">Name is required</div></div>
+
+        <div class="form-group">
+            <label for="lastName">Last name&nbsp;*</label>
+            <input type="text" class="form-control" id="lastName" required
+                   [(ngModel)]="player.lastName"
+                   #lastName="ngForm"
+                   [class.is-invalid]="!lastName.valid"
+                   ngControl="lastName"></div>
+
+        <div class="form-group">
+            <label for="nationality">Nationality&nbsp;*</label>
+            <input type="text" class="form-control" id="nationality" required
+                   [(ngModel)]="player.nationality"
+                   #nationality="ngForm"
+                   [class.is-invalid]="!nationality.valid"
+                   ngControl="nationality"></div>
+
+        <div class="form-group">
+            <label for="position">Position&nbsp;*</label>
+            <input type="text" class="form-control" id="position" required
+                   [(ngModel)]="player.position"
+                   #position="ngForm"
+                   [class.is-invalid]="!position.valid"
+                   ngControl="position"></div>
+
+        <div class="form-group">
+            <label for="image">Image Url</label>
+            <input type="text" class="form-control" id="image" required
+                   [(ngModel)]="player.image"
+                   ngControl="image"></div>
+
+
+        <div class="row">
+            <button type="button"
+                    (click)="clear()"
+                    class="btn">Clear</button>
+
+            <button type="submit"
+                    class="btn btn-primary"
+                    [disabled]="!newPlayerForm.form.valid">Submit</button>
+
+            <small class="col text-right">*&nbsp;Required</small>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="mb-2">-->
+<!--    <label>Player Number</label>-->
+<!--    <input class="add-player-number ml-1"-->
+<!--           type="number"-->
+<!--           [(ngModel)]="number"><br>-->
+
+<!--    <label>First Name</label>-->
+<!--    <input class="add-player-string ml-1"-->
+<!--           type="text"-->
+<!--           [(ngModel)]="name">-->
+
+<!--    <button (click)="doSomething()">Action</button>-->
+<!--</div>-->
+

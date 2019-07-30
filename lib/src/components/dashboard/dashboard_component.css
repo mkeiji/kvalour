@@ -1,0 +1,13 @@
+.kv-top-players {
+    margin: 50px 150px 100px 150px;
+}
+
+.kv-top-players .kv-top-player-img {
+    border-radius: 50%;
+    width: 140px
+}
+
+.kv-top-players-title {
+    text-align: center;
+    margin-top: 80px;
+}

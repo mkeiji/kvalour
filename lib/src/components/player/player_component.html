@@ -1,0 +1,43 @@
+<div id="players-page" class="w-75">
+    <div class="kv-player-manager-title">
+        <h2>Team Panel Manager</h2>
+    </div>
+
+    <add-player-form (addedPlayer)="add($event)"></add-player-form>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Birthdate</th>
+                <th scope="col">Position</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let player of players">
+                <th scope="row">{{player.number}}</th>
+                <td>{{player.name}} {{player.lastName}}</td>
+                <td>{{player.birthDate}}</td>
+                <td>{{player.position}}</td>
+                <td>{{player.nationality}}</td>
+                <td>
+                    <button type="button"
+                            class="btn-sm btn-info"
+                            (click)="gotoDetail(player.id)">Edit</button>
+
+                    <button type="button"
+                            class="btn-sm btn-danger"
+                            (click)="
+                            delete(player);
+                            $event.stopPropagation()">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

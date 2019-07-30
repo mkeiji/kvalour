@@ -1,0 +1,34 @@
+image: google/dart
+
+stages:
+    - build
+    - test
+
+build:
+    stage: build
+    cache:
+        key: pub-cache
+        paths:
+            - .dart_tool
+            - .packages
+            - .pub-cache
+            - pubspec.lock
+            - pubspec.yaml
+        policy: push
+    script:
+        - pub get
+        - pub run build_runner build
+
+test:
+    stage: test
+    cache:
+        key: pub-cache
+        paths:
+            - .dart_tool
+            - .packages
+            - .pub-cache
+            - pubspec.lock
+            - pubspec.yaml
+        policy: pull
+    script:
+        - pub run test
