@@ -4,6 +4,7 @@ stages:
     - build
     - test
 
+# set PUB_CACHE env var
 build:
     stage: build
     cache:
