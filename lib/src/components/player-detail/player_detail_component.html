@@ -1,22 +1,3 @@
-<!--<div class="player-detail" *ngIf="player != null">-->
-<!--    <h4>{{player.name}}</h4>-->
-<!--    <h2>{{player.lastName}}</h2>-->
-<!--    <img class="small" src="{{player.image}}" alt="image">-->
-<!--    <div>id: {{player.id}}</div>-->
-<!--    <div>shirt: {{player.number}}</div>-->
-<!--    <div>birthDate: {{player.birthDate}}</div>-->
-<!--    <div>name: {{player.name}}</div>-->
-<!--    <div>lastname: {{player.lastName}}</div>-->
-<!--    <div>nationality: {{player.nationality}}</div>-->
-<!--    <div>position: {{player.position}}</div>-->
-<!--    <div>-->
-<!--        <label>name: </label>-->
-<!--        <input [(ngModel)]="player.name" placeholder="name">-->
-<!--        <button (click)="save()">Save</button>-->
-<!--    </div>-->
-<!--    <button (click)="goBack()">Back</button>-->
-<!--</div>-->
-
 <div *ngIf="player != null" class="edit-card-container">
     <div class="card w-50 mt-5">
         <div class="card-header">
@@ -27,10 +8,9 @@
         <div>
             <div class="card-body">
                 <div class="text-center">
-                    <img class="small mt-1 mb-2" src="{{player.image}}" alt="image">
+                    <img class="small mt-1 mb-2" [src]="player.image" alt="image">
                 </div>
 
-<!--                TODO: add player as input and handle output player save-->
                 <edit-player-form [currentPlayer]="player"
                                   (savedPlayer)="save($event)"></edit-player-form>
             </div>

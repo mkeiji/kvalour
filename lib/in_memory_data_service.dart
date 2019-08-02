@@ -8,17 +8,17 @@ import 'package:http/testing.dart';
 import 'package:intl/intl.dart';
 class InMemoryDataService extends MockClient {
     static final _mockDbPlayers = [
-        {'id':  1, 'number':  1, 'birthDate': '1991-05-01', 'name': 'Tyson'  , 'lastName': 'Farago'        , 'nationality': 'Canada' , 'position': 'Goalkeeper', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160341/Tyson-Farago.jpg'},
-        {'id':  2, 'number':  2, 'birthDate': '1999-05-06', 'name': 'Raphaël', 'lastName': 'Garcia'        , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160333/Raphael-Garcia.jpg'},
-        {'id':  3, 'number':  3, 'birthDate': '1993-07-27', 'name': 'Skylar' , 'lastName': 'Thomas'        , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160337/Skylar-Thomas.jpg'},
-        {'id':  4, 'number':  4, 'birthDate': '1993-05-02', 'name': 'Jordan' , 'lastName': 'Murrell'       , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160324/Jordan-Murrel.jpg'},
-        {'id':  5, 'number':  5, 'birthDate': '1995-09-15', 'name': 'Louis'  , 'lastName': 'Béland-Goyette', 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160327/Louis-Beland-Goyette.jpg'},
-        {'id':  6, 'number':  6, 'birthDate': '1991-09-06', 'name': 'Martín' , 'lastName': 'Arguiñarena'   , 'nationality': 'Uruguay', 'position': 'Defender'  , 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160328/Martin-Arguinarena.jpg'},
-        {'id':  7, 'number':  7, 'birthDate': '1995-03-04', 'name': 'Dylan'  , 'lastName': 'Sacramento'    , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160321/Dylan-Sacramento.jpg'},
-        {'id':  8, 'number':  8, 'birthDate': '1997-02-18', 'name': 'Diego'  , 'lastName': 'Gutiérrez'     , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160318/Diego-Gutierrez.jpg'},
-        {'id':  9, 'number':  9, 'birthDate': '1995-07-09', 'name': 'Michael', 'lastName': 'Petrasso'      , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160331/Michael-Petrasso.jpg'},
-        {'id': 10, 'number': 10, 'birthDate': '1995-01-20', 'name': 'Dylan'  , 'lastName': 'Carreiro'      , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160319/Dylan-Carreiro.jpg'},
-        {'id': 11, 'number': 11, 'birthDate': '1999-01-03', 'name': 'Glenn'  , 'lastName': 'Muenkat'       , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'https://s3.amazonaws.com/cpl-network/app/uploads/cpl/2019/04/19160323/Glenn-Muenkat.jpg'}
+        {'id':  1, 'number':  1, 'birthDate': '1991-05-01', 'name': 'Tyson'  , 'lastName': 'Farago'        , 'nationality': 'Canada' , 'position': 'Goalkeeper', 'image': 'assets/Tyson-Farago-min.jpg'},
+        {'id':  2, 'number':  2, 'birthDate': '1999-05-06', 'name': 'Raphaël', 'lastName': 'Garcia'        , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'assets/Raphael-Garcia-min.jpg'},
+        {'id':  3, 'number':  3, 'birthDate': '1993-07-27', 'name': 'Skylar' , 'lastName': 'Thomas'        , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'assets/Skylar-Thomas-min.jpg'},
+        {'id':  4, 'number':  4, 'birthDate': '1993-05-02', 'name': 'Jordan' , 'lastName': 'Murrell'       , 'nationality': 'Canada' , 'position': 'Defender'  , 'image': 'assets/Jordan-Murrel-min.jpg'},
+        {'id':  5, 'number':  5, 'birthDate': '1995-09-15', 'name': 'Louis'  , 'lastName': 'Béland-Goyette', 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Louis-Beland-Goyette-min.jpg'},
+        {'id':  6, 'number':  6, 'birthDate': '1991-09-06', 'name': 'Martín' , 'lastName': 'Arguiñarena'   , 'nationality': 'Uruguay', 'position': 'Defender'  , 'image': 'assets/Martin-Arguinarena-min.jpg'},
+        {'id':  7, 'number':  7, 'birthDate': '1995-03-04', 'name': 'Dylan'  , 'lastName': 'Sacramento'    , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Dylan-Sacramento-min.jpg'},
+        {'id':  8, 'number':  8, 'birthDate': '1997-02-18', 'name': 'Diego'  , 'lastName': 'Gutiérrez'     , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Diego-Gutierrez-min.jpg'},
+        {'id':  9, 'number':  9, 'birthDate': '1995-07-09', 'name': 'Michael', 'lastName': 'Petrasso'      , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Michael-Petrasso-min.jpg'},
+        {'id': 10, 'number': 10, 'birthDate': '1995-01-20', 'name': 'Dylan'  , 'lastName': 'Carreiro'      , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Dylan-Carreiro-min.jpg'},
+        {'id': 11, 'number': 11, 'birthDate': '1999-01-03', 'name': 'Glenn'  , 'lastName': 'Muenkat'       , 'nationality': 'Canada' , 'position': 'Midfielder', 'image': 'assets/Glenn-Muenkat-min.jpg'}
     ];
 
     static List<Player> _playersDb;
