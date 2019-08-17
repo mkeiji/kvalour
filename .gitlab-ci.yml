@@ -3,6 +3,7 @@ image: google/dart
 stages:
     - build
     - test
+    - release
 
 # set PUB_CACHE env var
 build:
@@ -33,3 +34,22 @@ test:
         policy: pull
     script:
         - pub run test
+
+release:
+    stage: release
+    only:
+        - master
+    image: docker:stable
+    cache:
+        key: pub-cache
+        paths:
+            - .dart_tool
+            - .packages
+            - .pub-cache
+            - pubspec.lock
+            - pubspec.yaml
+        policy: pull
+    script:
+        - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+        - docker build -t mgkeiji/kvalour .
+        - docker push mgkeiji/kvalour
