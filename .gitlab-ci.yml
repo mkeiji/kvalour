@@ -50,6 +50,6 @@ release:
             - pubspec.yaml
         policy: pull
     script:
-        - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+        - echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USER --password-stdin
         - docker build -t mgkeiji/kvalour .
         - docker push mgkeiji/kvalour
