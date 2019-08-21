@@ -5,7 +5,7 @@ stages:
     - test
     - release
 
-# set PUB_CACHE env var
+# set PUB_CACHE=.pub-cache env var
 build:
     stage: build
     cache:
@@ -16,10 +16,12 @@ build:
             - .pub-cache
             - pubspec.lock
             - pubspec.yaml
+            - build
         policy: push
     script:
         - pub get
         - pub run build_runner build
+        - pub run webdev build
 
 test:
     stage: test
@@ -31,6 +33,7 @@ test:
             - .pub-cache
             - pubspec.lock
             - pubspec.yaml
+            - build
         policy: pull
     script:
         - pub run test
@@ -48,6 +51,7 @@ release:
             - .pub-cache
             - pubspec.lock
             - pubspec.yaml
+            - build
         policy: pull
     script:
         - echo $REGISTRY_PASSWORD | docker login -u $REGISTRY_USER --password-stdin
