@@ -8,4 +8,7 @@ jobs:
             image: google/dart:2.3.2-dev.0.1
         steps:
             - name: Get dependencies
-              run: dart --version
+              run: pub get
+
+            - name: Build app
+              run: pub run webdev build
