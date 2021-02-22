@@ -1,0 +1,21 @@
+name: kvalour-ci
+on: push
+
+jobs:
+    Build:
+        runs-on: ubuntu-latest
+
+        container:
+            image: google/dart:2.3.2-dev.0.1
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Print Dart SDK version
+              run: dart --version
+
+            - name: Get dependencies
+              run: pub get
+
+            - name: Build app
+              run: pub run webdev build
